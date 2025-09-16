@@ -163,6 +163,7 @@ public class SchedulePage implements ActionListener, MouseListener {
 	else if (e.getSource() == deleteBtn) {
     if (lastAddedIndex >= 0 && lastAddedIndex < schedule.getAll().length) {
         schedule.remove(lastAddedIndex);
+		FileIO.writeInFile(schedule);
         JOptionPane.showMessageDialog(frame, "Deleted train last train");
         lastAddedIndex = -1; 
         refreshScreen();
@@ -175,3 +176,4 @@ public class SchedulePage implements ActionListener, MouseListener {
 
     
 }
+
